@@ -5,4 +5,4 @@
 
 define('DOKU_CONF','/home/bitnami/dokuwiki/conf/');
 
-include('/home/bitnami/cloudflare/validate_cloudflare_jwt/index.php');
+// include('/home/bitnami/cloudflare/validate_cloudflare_jwt/index.php');
