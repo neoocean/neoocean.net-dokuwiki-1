@@ -1,2 +1,5 @@
 .well-known/*
 .google*.html
+google*.html
+.github
+.github/*
