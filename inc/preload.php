@@ -3,6 +3,6 @@
 // among other things. For more information on this issue, please see:w
 // http://www.dokuwiki.org/devel:coding_style#php_closing_tags
 
-define('DOKU_CONF','/home/bitnami/dokuwiki/conf/');
+define('DOKU_CONF','/dokuwiki/dokuwiki/conf/');
 
 // include('/home/bitnami/cloudflare/validate_cloudflare_jwt/index.php');
