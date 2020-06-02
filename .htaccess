@@ -53,8 +53,4 @@ RewriteCond %{HTTP_REFERER} !^https://neoocean.net$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://www.neoocean.net/.*$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://www.neoocean.net$      [NC]
 
-RewriteCond %{HTTP_REFERER} !^http://o.neoocean.net/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://o.neoocean.net$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://o.neoocean.net/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://o.neoocean.net$      [NC]
 RewriteRule .*\.(jpg|jpeg|gif|png|bmp|pdf|gpx)$ - [F,NC]
