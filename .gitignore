@@ -2,5 +2,7 @@
 .google*.html
 google*.html
 .github
-.github/*
+.git
 data/
+conf/
+
