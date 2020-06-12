@@ -659,8 +659,6 @@ class Doku_Renderer_xhtml extends Doku_Renderer {
 
         $language = preg_replace(PREG_PATTERN_VALID_LANGUAGE, '', $language);
 
-        $language = preg_replace(PREG_PATTERN_VALID_LANGUAGE, '', $language);
-
         if($filename) {
             // add icon
             list($ext) = mimetype($filename, false);
