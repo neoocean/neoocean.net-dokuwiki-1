@@ -1268,6 +1268,9 @@ function con($pre, $text, $suf, $pretty = false) {
  * @param string $id the page ID
  */
 function detectExternalEdit($id) {
+    /*
+    현재 로드밸런싱 동기화 방법 때문에 바깥 편집이 항상 일어난다. 한쪽 서버에서 다른 한쪽으로 파일이 복사되면 타임스탬프가 바뀐다. 그래서 이 페이지를 편집할 때 변경된 타임스탬프 때문에 '127.0.0.1'에서 편집한 바깥편집 로그가 생긴다. 이 로그앤트리는 생길 필요가 없다.
+
     global $lang;
 
     $fileLastMod = wikiFN($id);
@@ -1291,8 +1294,6 @@ function detectExternalEdit($id) {
             $filesize_new = filesize($fileLastMod);
             $sizechange = $filesize_new - $filesize_old;
 
-            /*
-            현재 로드밸런싱 동기화 방법 때문에 바깥 편집이 항상 일어난다. 한쪽 서버에서 다른 한쪽으로 파일이 복사되면 타임스탬프가 바뀐다. 그래서 이 페이지를 편집할 때 변경된 타임스탬프 때문에 '127.0.0.1'에서 편집한 바깥편집 로그가 생긴다. 이 로그앤트리는 생길 필요가 없다. 이 함수 전체의 동작을 주석으로 변경하는게 맞을 것 같지만 일단 실제 로그앤트리를 추가하는 부분만 먼저 제거해보자.
             addLogEntry(
                 $lastMod,
                 $id,
@@ -1302,12 +1303,12 @@ function detectExternalEdit($id) {
                 array('ExternalEdit' => true),
                 $sizechange
             );
-            */
             // remove soon to be stale instructions
             $cache = new CacheInstructions($id, $fileLastMod);
             $cache->removeCache();
         }
     }
+    */
 }
 
 /**
