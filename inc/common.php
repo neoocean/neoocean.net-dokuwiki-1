@@ -1268,8 +1268,6 @@ function con($pre, $text, $suf, $pretty = false) {
  * @param string $id the page ID
  */
 function detectExternalEdit($id) {
-    /*
-    현재 로드밸런싱 동기화 방법 때문에 바깥 편집이 항상 일어난다. 한쪽 서버에서 다른 한쪽으로 파일이 복사되면 타임스탬프가 바뀐다. 그래서 이 페이지를 편집할 때 변경된 타임스탬프 때문에 '127.0.0.1'에서 편집한 바깥편집 로그가 생긴다. 이 로그앤트리는 생길 필요가 없다.
 
     global $lang;
 
@@ -1308,7 +1306,6 @@ function detectExternalEdit($id) {
             $cache->removeCache();
         }
     }
-    */
 }
 
 /**
@@ -1375,7 +1372,7 @@ function saveWikiText($id, $text, $summary, $minor = false) {
     // if the content has not been changed, no save happens (plugins may override this)
     if(!$svdta['contentChanged']) return;
 
-    detectExternalEdit($id);
+    // detectExternalEdit($id); // 바깥 편집을 생성하지 않도록 함.
 
     if(
         $svdta['changeType'] == DOKU_CHANGE_TYPE_CREATE ||
