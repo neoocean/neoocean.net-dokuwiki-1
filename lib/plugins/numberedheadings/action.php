@@ -1,26 +1,25 @@
 <?php
+
 /**
  * DokuWiki Plugin Numbered Headings; action component
  *
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * @author     Satoshi Sahara <sahara.satoshi@gmail.com>
  */
-if (!defined('DOKU_INC')) die();
-
 class action_plugin_numberedheadings extends DokuWiki_Action_Plugin
 {
     /**
      * Registers a callback function for a given event
      */
-    function register(Doku_Event_Handler $controller)
+    public function register(Doku_Event_Handler $controller)
     {
         $controller->register_hook(
-            'PARSER_HANDLER_DONE', 'BEFORE', $this, '_numbering', []
+            'PARSER_HANDLER_DONE', 'BEFORE', $this, 'numbering', []
         );
 
         if ($this->getConf('fancy')) {
             $controller->register_hook(
-                'RENDERER_CONTENT_POSTPROCESS', 'AFTER', $this, '_tieredNumber'
+                'RENDERER_CONTENT_POSTPROCESS', 'AFTER', $this, 'decorateTieredNumber'
             );
         }
     }
@@ -29,7 +28,7 @@ class action_plugin_numberedheadings extends DokuWiki_Action_Plugin
      * PARSER_HANDLER_DONE event handler
      * convert plugin instruction to header
      */
-    function _numbering(Doku_Event $event)
+    public function numbering(Doku_Event $event)
     {
         // load helper object
         static $numbering;
@@ -87,8 +86,8 @@ class action_plugin_numberedheadings extends DokuWiki_Action_Plugin
                 // build tiered numbers for hierarchical headings
                 $tieredNumbers = $numbering->getTieredNumbers($level);
                 if ($tieredNumbers) {
-                    // append figure space after tiered number to distinguish title
-                    $tieredNumbers .= ' '; // U+2007 figure space
+                    // append double spaces after tiered number to distinguish title
+                    $tieredNumbers .= $this->getConf('fancy') ? '  ' : ' ';
                 }
                 $text = $tieredNumbers.$title;
 
@@ -108,10 +107,10 @@ class action_plugin_numberedheadings extends DokuWiki_Action_Plugin
      * RENDERER_CONTENT_POSTPROCESS
      * enclose tiered numbers of hierarchical headings in span tag
      */
-    function _tieredNumber(Doku_Event $event)
+    public function decorateTieredNumber(Doku_Event $event)
     {
         if ($event->data[0] == 'xhtml') {
-            $search = '#(<h\d.*?>)(.+?)(?: )(?=.*?</h\d>)#u'; // U+2007 figure space
+            $search = '#(<h\d.*?>)(.+?)(  )(?=.*?</h\d>)#';
             $replacement = '${1}<span class="plugin_numberedheadings">${2}</span>'."\t";
             $event->data[1] = preg_replace($search, $replacement, $event->data[1]);
         }
