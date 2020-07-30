@@ -1268,7 +1268,6 @@ function con($pre, $text, $suf, $pretty = false) {
  * @param string $id the page ID
  */
 function detectExternalEdit($id) {
-
     global $lang;
 
     $fileLastMod = wikiFN($id);
