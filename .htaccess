@@ -54,3 +54,33 @@ RewriteCond %{HTTP_REFERER} !^https://www.neoocean.net/.*$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://www.neoocean.net$      [NC]
 
 RewriteRule .*\.(jpg|jpeg|gif|png|bmp|pdf|gpx)$ - [F,NC]
+
+Redirect /blog/finish                               https://woojinkim.atlassian.net/wiki/spaces/public/pages/43909248
+Redirect /blog/disappointing-books                  https://woojinkim.atlassian.net/wiki/spaces/public/pages/43909290
+Redirect /blog/youtubemusic                         https://woojinkim.atlassian.net/wiki/spaces/public/pages/43810901
+Redirect /blog/trimmone-theredays                   https://woojinkim.atlassian.net/wiki/spaces/public/pages/11960592
+Redirect /blog/report                               https://woojinkim.atlassian.net/wiki/spaces/public/pages/11797798
+Redirect blog/word                                  https://woojinkim.atlassian.net/wiki/spaces/public/pages/11831983
+Redirect /blog/senior                               https://woojinkim.atlassian.net/wiki/spaces/public/pages/43909300
+Redirect /blog/dokuwiki-loadbalancing/en            https://woojinkim.atlassian.net/wiki/spaces/public/pages/43876419
+Redirect /blog/dokuwiki-loadbalancing               https://woojinkim.atlassian.net/wiki/spaces/public/pages/43909318
+Redirect /blog/internship                           https://woojinkim.atlassian.net/wiki/spaces/public/pages/43811001
+Redirect /blog/spen                                 https://woojinkim.atlassian.net/wiki/spaces/public/pages/43778498
+Redirect /blog/fraud                                https://woojinkim.atlassian.net/wiki/spaces/public/pages/43909337
+Redirect /blog/transfer                             https://woojinkim.atlassian.net/wiki/spaces/public/pages/43909350
+Redirect /blog/strava                               https://woojinkim.atlassian.net/wiki/spaces/public/pages/43778525
+Redirect /blog/synchronization                      https://woojinkim.atlassian.net/wiki/spaces/public/pages/43876468
+Redirect /blog/gasboiler                            https://woojinkim.atlassian.net/wiki/spaces/public/pages/43811061
+Redirect /blog/esc                                  https://woojinkim.atlassian.net/wiki/spaces/public/pages/43876490
+Redirect /blog/failure                              https://woojinkim.atlassian.net/wiki/spaces/public/pages/44662785
+Redirect /blog/eternal                              https://woojinkim.atlassian.net/wiki/spaces/public/pages/44793869
+Redirect /blog/dependency                           https://woojinkim.atlassian.net/wiki/spaces/public/pages/44859410
+Redirect /blog/wrong-way                            https://woojinkim.atlassian.net/wiki/spaces/public/pages/44498979
+Redirect /blog/mobile-workstation-requirements      https://woojinkim.atlassian.net/wiki/spaces/public/pages/44859417
+Redirect /blog/interview                            https://woojinkim.atlassian.net/wiki/spaces/public/pages/45023250
+Redirect /blog/varia-rtl510                         https://woojinkim.atlassian.net/wiki/spaces/public/pages/44761102
+Redirect /blog/emergency                            https://woojinkim.atlassian.net/wiki/spaces/public/pages/44892170
+Redirect /blog/troubleshooting-webserver-memory     https://woojinkim.atlassian.net/wiki/spaces/public/pages/44597276
+Redirect /blog/remote-day-5                         https://woojinkim.atlassian.net/wiki/spaces/public/pages/44597285
+Redirect /blog/remote-day-4                         https://woojinkim.atlassian.net/wiki/spaces/public/pages/44761142
+Redirect /blog/laziness                             https://woojinkim.atlassian.net/wiki/spaces/public/pages/44761149
